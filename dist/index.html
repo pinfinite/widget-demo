@@ -1,0 +1,29 @@
+<!doctype html>
+  <html>
+   <head>
+     <title>Getting Started</title>
+   </head>
+   <body class="body">
+      <div class="container">
+        <div class="col-xs-12">  
+        
+          <div id="widget">
+          </div>
+  
+        </div>
+      </div>
+      <script src="widget.js"></script>
+  
+      <script>
+        NS = MyLibrary.default;
+      NS.config({
+        locale: "en_US",
+        environment: "dev",
+        authId: "",
+        apiKey: ""
+      });
+      var myWidget = NS.widgets.myWidget.new({ selector: "#widget"});
+      myWidget.render({ arg : "00001"});
+      myWidget.on("", ()=> console.log("Callback"))
+      </script>
+</html>
